@@ -89,22 +89,22 @@ lora.set_low_data_rate_optim(True)
 lora.set_pa_ramp(PA_RAMP.RAMP_50_us)
 lora.set_agc_auto_on(True)
 
-print(lora)
+
+#print(lora)
 assert(lora.get_agc_auto_on() == 1)
 
-try: input("Press enter to start...")
-except: pass
+#try: input("Press enter to start...")
+#except: pass
 
 try:
     lora.start()
-except KeyboardInterrupt:
+#except KeyboardInterrupt:
     sys.stdout.flush()
-    print("")
+#    print("")
     sys.stderr.write("KeyboardInterrupt\n")
 finally:
     sys.stdout.flush()
-    print("")
+#    print("")
     lora.set_mode(MODE.SLEEP)
-    print(lora)
+#    print(lora)
     BOARD.teardown()
-
