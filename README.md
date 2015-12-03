@@ -1,4 +1,9 @@
 # Overview
+This Github repo is almost an exact copy of the mayeranalytics/pySX127x repo.
+I'm currently looking for someone with python skills who can help me either add a flag for a custom payload or make the script interactive and have the user input a payload. 
+Line #98 of send_message contains the payload:  self.write_payload([0x20, 0x48, 0x65, 0x6c, 0x6c, 0x6f])  says " Hello" in hex
+
+
 
 This is a python interface to the [Semtech SX1276/7/8/9](http://www.semtech.com/wireless-rf/rf-transceivers/) 
 long range, low power transceiver family.
