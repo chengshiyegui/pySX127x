@@ -88,6 +88,15 @@ class LoRaBeacon(LoRa):
         print("\non_FhssChangeChannel")
         print(self.get_irq_flags())
 
+    def toHex(s):
+        lst = []
+        for ch in s:
+            hv = hex(ord(ch))
+            if len(hv) == 1:
+                hv = '0'+hv
+            lst.append(hv)
+        return lst
+
     def start(self):
         global args
         sys.stdout.write("\rstart")
@@ -101,15 +110,6 @@ class LoRaBeacon(LoRa):
         self.set_mode(MODE.TX)
         while True:
             sleep(1)
-
-    def toHex(s):
-        lst = []
-        for ch in s:
-            hv = hex(ord(ch))
-            if len(hv) == 1:
-                hv = '0'+hv
-            lst.append(hv)
-        return lst
 
 lora = LoRaBeacon(verbose=False)
 args = parser.parse_args(lora)
