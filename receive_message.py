@@ -45,7 +45,7 @@ class LoRaRcvCont(LoRa):
 #	self.get_payload_length
 	self.set_payload_length(8)
 	self.get_rx_nb_bytes
-        print(map(hex, self.read_payload(nocheck=True)))
+        print(''.join(map(hex, self.read_payload(nocheck=True))).replace('0x', '').decode("hex"))
         self.set_mode(MODE.SLEEP)
         self.reset_ptr_rx()
         BOARD.led_off()

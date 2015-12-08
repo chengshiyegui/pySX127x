@@ -88,6 +88,15 @@ class LoRaBeacon(LoRa):
         print("\non_FhssChangeChannel")
         print(self.get_irq_flags())
 
+    def toHex(s):
+        lst = []
+        for ch in s:
+            hv = hex(ord(ch))
+            if len(hv) == 1:
+                hv = '0'+hv
+            lst.append(hv)
+        return lst
+
     def start(self):
         global args
         sys.stdout.write("\rstart")
@@ -95,7 +104,8 @@ class LoRaBeacon(LoRa):
         BOARD.led_on()
         self.set_payload_length(8)
         self.set_max_payload_length(100)
-        self.write_payload([0x20, 0x48, 0x65, 0x6c, 0x6c, 0x6f])
+        my_message = raw_input('Enter a message: ')
+        self.write_payload(toHex(my_message))
         self.get_payload_length
         self.set_mode(MODE.TX)
         while True:
