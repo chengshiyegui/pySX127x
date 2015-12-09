@@ -1,10 +1,7 @@
 # Overview
 This Github repo is almost an exact copy of the mayeranalytics/pySX127x repo.
-I'm currently looking for someone with python skills who can help me either add a flag for a custom payload or make the script interactive and have the user input a payload. 
+I'm currently looking for someone with python skills who can help me!
 
-Line #98 of send_message.py contains the payload:  
-self.write_payload([0x20, 0x48, 0x65, 0x6c, 0x6c, 0x6f]) 
-It says " Hello" in hex.
 
 
 ==================================================================================================================
