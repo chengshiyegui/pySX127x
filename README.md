@@ -2,6 +2,12 @@
 This Github repo is almost an exact copy of the mayeranalytics/pySX127x repo.
 I'm currently looking for someone with python skills who can help me!
 
+Completed: Input custom payload and convert to hex list for transfer.
+Completed: Receive payload and decode to readable text
+
+TO DO:
+Combine it_sends.py into the properly written it_receives.py
+I want it to always be in receive mode until the user presses enter then they can type a message and after pressing enter again returns to recieive mode.
 
 
 ==================================================================================================================
